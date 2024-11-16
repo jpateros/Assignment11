@@ -4,9 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Lab</title>
+    <title>Assignment 11</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <style>
         body {
             padding-top: 56px;
@@ -30,10 +40,14 @@
             color: white;
         }
 
-        .carousel-caption {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 5px;
+        .tabs-content {
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-top: none;
+        }
+
+        footer hr {
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -82,7 +96,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Carousel component to add a carousel of rotating images to the main page of the site -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -130,7 +143,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
+    
     <!-- Content Area -->
     <div class="container content">
         <div class="row">
@@ -145,22 +158,67 @@
                 </p>
             </div>
             <div class="col-md-4">
+                <!-- Use the Tabs component to divide up your 3 product descriptions and their associated content within the main page. This should appear in the Content section within the center column (col 2).  -->
                 <h5>Our Solutions</h5>
-                <p>Explore vProspect, vConvert, and vRetain to see how we redefine customer engagement strategies.</p>
+                <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="vProspect-tab" data-bs-toggle="tab" data-bs-target="#vProspect" type="button" role="tab" aria-controls="vProspect" aria-selected="true"><strong>vProspect 2.0</strong></button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="vConvert-tab" data-bs-toggle="tab" data-bs-target="#vConvert" type="button" role="tab" aria-controls="vConvert" aria-selected="false"><strong>vConvert 2.0</strong></button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="vRetain-tab" data-bs-toggle="tab" data-bs-target="#vRetain" type="button" role="tab" aria-controls="vRetain" aria-selected="false"><strong>vRetain 1.0</strong></button>
+                    </li>
+                </ul>
+                <div class="tab-content tabs-content" id="productTabsContent">
+                    <div class="tab-pane fade show active" id="vProspect" role="tabpanel" aria-labelledby="vProspect-tab">
+                        <p>Define and research your target audience, define your strategy to reach that audience and present a strong and memorable brand to that audience. 
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="vConvert" role="tabpanel" aria-labelledby="vConvert-tab">
+                        <p>Create a highly user-friendly and easy-to-navigate information architecture that will help your prospects interact with the company on a highly interactive level. 
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="vRetain" role="tabpanel" aria-labelledby="vRetain-tab">
+                        <p>Build on existing customer relationships to improve productivity and maximize customer loyalty, while growing revenues. 
+                        </p>
+                    </div>
+                </div>
             </div>
+
+            <!-- Create 2 client testimonials within the Content section (col 3). Use links or buttons to display the person’s name only. When the user clicks the name, display their testimonial. Use the Collapse component to make this work. -->
             <div class="col-md-4">
                 <h5>Client Testimonials</h5>
-                <p>Get in touch with us to learn more about our products and services. We're here to help!</p>
-            </div>
+                <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#aaronTestimonial">Aaron D. Tyres</button>
+                <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#robinTestimonial">Robin Banks</button>
+              
+                <div class="collapse" id="aaronTestimonial">
+                  <div class="card card-body">
+                    <p>Throughout the years we have worked with Vecta Corporation, we have always been amazed at the level of dedication and professionalism that they have provided us and our WGDC products. It is this commitment that has increased both our income and exposure exponentially.
+                    </p>
+                  </div>
+                </div>
+              
+                <div class="collapse" id="robinTestimonial">
+                  <div class="card card-body">
+                    <p>Incredible results from an incredible effort by the Vecta Corporation team! We are very pleased with the business benefits we have rceived by working with them.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Add some footer text along with a horizontal rule to the footer section of the site. -->
     <footer>
         <div class="container">
-            <p> Copyright 2015 &copy; VectaCorporation</p>
+          <hr class="hr">
+          <p>Copyright &copy 2015 VectaCorporation</p>
         </div>
-    </footer>
+      </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
